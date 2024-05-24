@@ -9,6 +9,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   private http = inject(HttpClient);
 
   getTranslation(lang: string): Observable<Translation> {
+    debugger;
     return this.http.get<Translation>(
       environment.baseURI + `assets/i18n/${lang}.json`,
     );

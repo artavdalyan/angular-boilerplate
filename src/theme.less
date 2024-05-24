@@ -1,1 +1,341 @@
 @import '../node_modules/ng-zorro-antd/ng-zorro-antd.less';
+
+
+// Custom Theming for NG-ZORRO
+// For more information: https://ng.ant.design/docs/customize-theme/en
+// FIXME: Split to components
+@import '../node_modules/ng-zorro-antd/ng-zorro-antd.less';
+
+// Override less variables to here
+// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
+
+// -------- Colors -----------
+@blue-base: #28334a;
+@blue-1: #f5f8ff;
+@blue-2: #ebf1fe;
+@blue-3: #d7e4fd;
+@blue-4: #afc8fb;
+@blue-5: #5f91f7;
+@blue-6: @blue-base;
+@blue-7: #2959b8;
+@blue-8: #19356e;
+@blue-9: #132956;
+
+@red-base: #f45050;
+@red-1: #fef1f1;
+@red-2: #fceae7;
+@red-3: #fde5e5;
+@red-4: #fcc9c9;
+@red-5: #f67373;
+@red-6: @red-base;
+@red-7: #c34040;
+@red-8: #923030;
+@red-9: #551c1c;
+
+@purple-base: #6371de;
+@purple-1: #f7f8fd;
+@purple-2: #eff1fc;
+@purple-3: #e0e3f8;
+@purple-4: #c1c6f2;
+@purple-5: #828de5;
+@purple-6: @purple-base;
+@purple-7: #4a55a7;
+@purple-8: #2d3364;
+@purple-9: #23284e;
+
+@green-base: #00b37e;
+@green-1: #f2fbf9;
+@green-2: #e5f7f2;
+@green-3: #ccf0e5;
+@green-4: #99e1cb;
+@green-5: #33c298;
+@green-6: @green-base;
+@green-7: #00865f;
+@green-8: #005139;
+@green-9: #003f2c;
+
+@orange-base: #ff7e61;
+@orange-1: #fff9f7;
+@orange-2: #fff2ef;
+@orange-3: #ffe5df;
+@orange-4: #ffcbc0;
+@orange-5: #ff9881;
+@orange-6: @orange-base;
+@orange-7: #bf5f49;
+@orange-8: #73392c;
+@orange-9: #592c22;
+
+@yellow-base: #ffc802;
+@yellow-1: #fffcf2;
+@yellow-2: #fffae6;
+@yellow-3: #fff4cc;
+@yellow-4: #ffe99a;
+@yellow-5: #ffd335;
+@yellow-6: @yellow-base;
+@yellow-7: #e6b402;
+@yellow-8: #bf9602;
+@yellow-9: #594601;
+
+@black-base: #262931;
+@black-1: #f4f4f5;
+@black-2: #e9eaea;
+@black-3: #d4d4d6;
+@black-4: #a8aaad;
+@black-5: #51545a;
+@black-6: @black-base;
+@black-7: #1d1f25;
+@black-8: #111216;
+@black-9: #0d0e11;
+
+// Border-radius
+@border-radius-base: 6px;
+
+// >>> Primary
+@primary-color: @blue-6;
+@primary-color-hover: @blue-5;
+@primary-color-active: @blue-5;
+
+@font-size-lg: 14px;
+
+// Buttons
+@btn-font-size-lg: 16px;
+@btn-font-weight: 500;
+@btn-purple-bg: #6371de;
+@btn-purple-color: #ffffffZ;
+@btn-border-radius-base: 6px;
+@btn-border-radius-sm: 4px;
+@btn-border-radius-lg: 8px;
+@btn-disable-bg: @blue-4;
+@btn-disable-color: #ffffff;
+@btn-disable-border: @blue-4;
+@btn-default-color: @primary-color;
+@btn-default-border: @primary-color;
+@slider-track-background-color: @primary-color;
+@slider-handle-color: @primary-color;
+@slider-track-background-color-hove: @primary-color;
+@slider-track-background-color-hover: @primary-color;
+@slider-handle-color-hover: @primary-color;
+@slider-handle-color-focus: @primary-color;
+@slider-handle-color-focus: @primary-color;
+@progress-default-color: @primary-color;
+
+@btn-height-base: 32px;
+@btn-height-lg: 40px;
+@btn-height-sm: 24px;
+@btn-padding-horizontal-lg: 16px;
+@btn-padding-horizontal-sm: 16px;
+
+@height-lg: 20px;
+
+@line-height-base: 20px;
+
+@alert-with-description-padding: 16px 20px;
+@alert-error-border-color: #ff4d4f;
+
+@divider-color: #e2e8f0;
+
+@font-family: 'Inter', sans-serif;
+
+// Inputs
+@input-padding-horizontal-lg: 11px;
+@input-padding-vertical-lg: 9px;
+@input-padding-horizontal-base: 12px;
+@input-padding-vertical-base: 6px;
+@input-padding-horizontal-sm: 2px;
+@input-padding-vertical-sm: 12px;
+@input-border-color: #e9eaea;
+@input-disabled-bg: #f4f4f5;
+@input-disabled-color: #a8aaad;
+@input-affix-margin: 4px;
+
+// control border
+@control-border-radius: 8px;
+
+// Modals
+@modal-header-title-font-size: 16px;
+@modal-heading-color: @black-base;
+@modal-header-border-width: 0;
+@modal-footer-border-width: 0;
+@modal-header-padding: 20px 24px 0;
+@modal-body-padding: 12px 24px;
+@modal-footer-padding-vertical: 0 24px;
+@modal-footer-padding-horizontal: 20px;
+
+@media not all and (max-width: 650px) {
+  @modal-header-padding: 16px 16px 0;
+  @modal-body-padding: 12px 16px;
+  @modal-footer-padding-vertical: 0 16px;
+  @modal-footer-padding-horizontal: 16px;
+}
+
+
+// Tooltips
+@tooltip-bg: #262931;
+
+// Checkboxes
+@checkbox-border-radius: 2px;
+
+// Alert
+@alert-success-border-color: @green-4;
+@alert-success-bg-color: @green-1;
+@alert-success-icon-color: @green-6;
+@alert-info-border-color: @blue-4;
+@alert-info-bg-color: @blue-1;
+@alert-info-icon-color: @blue-6;
+@alert-warning-border-color: @yellow-4;
+@alert-warning-bg-color: @yellow-1;
+@alert-warning-icon-color: @yellow-6;
+@alert-error-border-color: @red-4;
+@alert-error-bg-color: @red-1;
+@alert-error-icon-color: @red-6;
+@alert-message-color: #262931;
+@alert-text-color: #262931;
+@alert-close-color: #a8aaad;
+@alert-close-hover-color: #a8aaad;
+@alert-with-description-padding-vertical: 6px;
+@alert-with-description-padding: 6px 12px;
+@alert-with-description-icon-size: 14px;
+
+@text-color: @black-6;
+@text-color-secondary: @black-4;
+
+// Stepper
+
+@steps-icon-top: -1px;
+@steps-icon-size: 40px;
+@steps-title-line-height: 40px;
+@steps-icon-font-size: 16px;
+@steps-icon-margin: 0;
+
+@tag-padding-vertical: 5px;
+@tag-padding-horizontal: 8px;
+
+@pagination-item-size-sm: 32px;
+@pagination-item-bg-active: transparent;
+// tags
+@tag-font-size: 14px;
+@tag-checkable-border: #e9eaea;
+@tag-checkable-color: #51545a;
+@tag-default-bg: @black-1;
+
+@dropdown-line-height: 20px;
+@dropdown-vertical-padding: 6px;
+
+
+// Collapse
+@collapse-header-padding: 0;
+@collapse-content-padding: 0;
+
+
+@menu-item-active-danger-bg: @blue-3;
+
+.@{iconfont-css-prefix} {
+  vertical-align: unset; // https://github.com/NG-ZORRO/ng-zorro-antd/blob/e7ee3002cfb0bb3a54fff07ba94de3f2f8b8d788/components/style/mixins/iconfont.less#L8
+}
+
+//button
+.@{btn-prefix-cls} {
+  &-purple {
+    .btn-purple();
+  }
+
+  &-lg {
+    border-radius: @btn-border-radius-lg;
+  }
+}
+
+.btn-purple() {
+  .button-variant-primary(@btn-purple-color, @btn-purple-bg, @primary-color-hover, @primary-color-active);
+}
+
+// Tags
+.@{tag-prefix-cls} {
+  padding: @tag-padding-vertical @tag-padding-horizontal;
+  border-color: @black-2;
+
+  &-checkable {
+    border: 1px solid @tag-checkable-border;
+    color: @tag-checkable-color;
+    cursor: pointer;
+
+    &:not(&-checked):hover {
+      border-color: @primary-color;
+      color: @primary-color;
+    }
+
+    &:active,
+    &-checked {
+      border-color: @primary-color;
+      color: @primary-color;
+    }
+
+    &-checked {
+      background-color: @blue-1;
+    }
+
+    &:active {
+      background-color: @blue-1;
+    }
+  }
+}
+
+// Pagination
+.@{pagination-prefix-cls} {
+  &-active {
+    border-radius: 2px;
+  }
+}
+
+.@{dropdown-prefix-cls} {
+  &-menu {
+    &-item {
+      &:hover,
+      &&-active {
+        background-color: @blue-1;
+        color: @blue-6;
+
+        .anticon svg > path {
+          stroke: @blue-6;
+        }
+      }
+    }
+
+    &-item.delete {
+      &:hover,
+      &&-active {
+        background-color: @red-1;
+        color: @blue-6;
+
+        .anticon svg > path {
+          stroke: @red-6;
+        }
+      }
+    }
+  }
+}
+
+.@{select-prefix-cls} {
+  &-dropdown {
+    padding: 0;
+  }
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: @blue-3;
+  color: @blue-6;
+}
+
+.@{menu-prefix-cls} {
+  // light theme
+  &-light {
+    .@{menu-prefix-cls}-item:hover,
+    .@{menu-prefix-cls}-item-active,
+    .@{menu-prefix-cls}:not(.@{menu-prefix-cls}-inline) .@{menu-prefix-cls}-submenu-open,
+    .@{menu-prefix-cls}-submenu-active,
+    .@{menu-prefix-cls}-submenu-title:hover {
+      background-color: @blue-3;
+      color: @blue-6;
+    }
+  }
+}
+

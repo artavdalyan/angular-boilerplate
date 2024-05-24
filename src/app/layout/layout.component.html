@@ -1,1 +1,59 @@
-<router-outlet></router-outlet>
+<nz-layout id="layout" class="min-h-dvh">
+  <nz-sider [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" [nzWidth]="220" nzCollapsible class="bg-white">
+    <div class="logo">
+      <img alt="logo" src="assets/images/logo.svg" width="90" />
+    </div>
+    <ul class="sidebar-nav general" nz-menu nzMode="inline" nzNoAnimation nzTheme="light">
+      <ng-container *ngFor="let menu of menuItems">
+        <ng-container *ngIf="menu.submenu?.length">
+          <li [nzIcon]="null"  [nzTitle]="menu.title" [routerLinkActive]="''" class="sidebar-nav__item" nz-submenu>
+            <ul class="sidebar-nav">
+              <li
+                [queryParams]="submenu.queryParam"
+                [routerLink]="submenu.path"
+                [routerLinkActive]="'ant-menu-item-selected'"
+                *ngFor="let submenu of menu.submenu"
+                class="sidebar-nav__item"
+                nz-menu-item
+              >
+                {{ submenu.title }}
+              </li>
+            </ul>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="!menu.submenu?.length">
+          <li
+            [queryParams]="menu.queryParam"
+            [routerLink]="menu.path"
+            [routerLinkActive]="'ant-menu-item-selected'"
+            class="sidebar-nav__item"
+            nz-menu-item
+          >
+            <div class="flex items-center">
+              <span>{{ menu.title }}</span>
+            </div>
+          </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header class="bg-white">
+      <div class="flex">
+        <i (click)="isCollapsed = !isCollapsed" [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" class="trigger" nz-icon></i>
+        <ul class="ml-auto mr-10 flex">
+          <li class="mr-4">
+            jjjjj
+          </li>
+          <li>
+            hhhh
+          </li>
+        </ul>
+      </div>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+

@@ -1,0 +1,87 @@
+.ant-input {
+  @apply w-full;
+
+  &-lg {
+    @apply text-sm #{!important};
+  }
+}
+
+.ng-invalid.ng-touched.ant-input {
+  @apply border-red-600;
+  box-shadow: 0 0 0 2px rgba(225, 46, 13, 0.2);
+}
+
+nz-input-group:has(.ng-invalid.ng-touched.ant-input) {
+  @apply rounded-md border-red-600;
+  box-shadow: 0 0 0 2px rgba(225, 46, 13, 0.2);
+
+  .ng-invalid.ng-touched.ant-input {
+    box-shadow: none;
+  }
+}
+
+body.light,
+body .light {
+  .nz-input {
+    &::placeholder {
+      transition: none !important;
+      @apply text-midnight-400;
+    }
+
+    &::-moz-placeholder {
+      transition: none !important;
+      @apply text-midnight-400;
+    }
+
+    &::-webkit-input-placeholder {
+      transition: none !important;
+      @apply text-midnight-400;
+    }
+
+    &:-ms-input-placeholder {
+      transition: none !important;
+      @apply text-midnight-400;
+    }
+  }
+}
+
+.field {
+  &-title {
+    @apply font-normal;
+    @apply mb-4;
+    @apply text-lg;
+  }
+
+  &-required {
+    @apply after:content-['*'];
+    @apply after:text-midnight-600;
+  }
+
+  &-required.error-label {
+    @apply text-red-600 after:text-red-600 #{!important};
+  }
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  @apply border-midnight-100;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+  @apply rounded;
+}
+
+input[type='color']::-webkit-color-swatch {
+  @apply rounded border-midnight-100;
+}
+
+select.appearance-none {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  cursor: pointer;
+}

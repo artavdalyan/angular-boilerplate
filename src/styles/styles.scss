@@ -1,1 +1,8 @@
 @import "tailwind";
+@import "nz-input";
+
+
+
+.otp-input {
+  @apply outline-primary-600
+}

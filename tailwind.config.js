@@ -2,36 +2,15 @@ const colors = require("tailwindcss/colors");
 
 const primaryPalettes = {
   slate: {
-    900: "#132956",
-    800: "#19356E",
-    700: "#2959B8",
-    600: "#3776F5",
-    500: "#5F91F7",
-    400: "#AFC8FB",
-    300: "#D7E4FD",
-    200: "#EBF1FE",
-    100: "#F5F8FF",
-  },
-};
-
-const themes = {
-  // Default theme is required for theming system to work correctly
-  default: {
-    primary: {
-      ...primaryPalettes.slate,
-      DEFAULT: primaryPalettes.slate[600],
-    },
-    accent: {
-      ...colors.slate,
-      DEFAULT: colors.slate[800],
-    },
-    warn: {
-      ...colors.red,
-      DEFAULT: colors.red[600],
-    },
-    "on-warn": {
-      500: colors.red["50"],
-    },
+    "900": "#121a27",
+    "800": "#1a2433",
+    "700": "#212d40",
+    "600": "#28334a",
+    "500": "#3b4b64",
+    "400": "#526581",
+    "300": "#7989a3",
+    "200": "#a0aecb",
+    "100": "#cfd6e3",
   },
 };
 
@@ -41,9 +20,8 @@ const themes = {
 const config = {
   darkMode: "class",
   content: [
-    "./projects/**/*.{html,scss,ts}",
     "./src/**/*.{html,scss,ts}",
-    "./projects/**/assets/i18n/*.json",
+    "./src/**/assets/i18n/*.json",
   ],
   important: true,
   theme: {
@@ -85,9 +63,33 @@ const config = {
     },
     colors: ({ colors }) => ({
       current: "current",
+      accent: {
+        ...colors.slate,
+        DEFAULT: colors.slate[800],
+      },
+      warn: {
+        ...colors.red,
+        DEFAULT: colors.red[600],
+      },
       transparent: "transparent",
       black: "#262931",
+      primary: {
+        ...primaryPalettes.slate,
+        DEFAULT: primaryPalettes.slate[600],
+      },
       white: "#fff",
+      secondary: {
+        "900": "#7d7e7d",
+        "800": "#979998",
+        "700": "#b0b2b1",
+        "600": "#c3c5c4",
+        "500": "#d0d2d1",
+        "400": "#dededd",
+        "300": "#ebebea",
+        "200": "#f3f3f3",
+        "100": "#fafafa"
+
+      },
       gray: {
         900: "#BDBDBD",
         800: "#CACACA",

@@ -1,5 +1,11 @@
 {
   "keywords": {
     "frontendService": "Frontend Service"
+  },
+  "error": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "maxlength": "This field must be less than 20 characters",
+    "minlength": "This field must be at least 6 characters"
   }
 }

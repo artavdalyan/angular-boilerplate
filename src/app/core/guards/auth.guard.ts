@@ -7,7 +7,7 @@ export const AuthGuard = (store = inject(Store), router = inject(Router)): UrlTr
   const hasAccessToken = store.selectSnapshot(AuthSelectors.accessToken);
 
   if (hasAccessToken) {
-    return router.createUrlTree(['']);
+    return router.createUrlTree(['/dash']);
   }
 
   return true;

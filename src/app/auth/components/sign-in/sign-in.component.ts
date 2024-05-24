@@ -1,13 +1,58 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, model, signal } from '@angular/core';
+import { SharedModule } from "@shared/shared.module";
+import { Router } from "@angular/router";
+import { FormControl, FormGroup } from "@ngneat/reactive-forms";
+import { Validators } from "@angular/forms";
+import { NgOtpInputModule } from "ng-otp-input";
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [],
+  imports: [SharedModule, NgOtpInputModule],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignInComponent {
+  loading = signal(false);
+  showOtp = signal(false);
 
+  private router = inject(Router);
+  public managerLogin = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.maxLength(20), Validators.minLength(6)]),
+  });
+
+  public otpControl = new FormControl('', [Validators.required]);
+
+
+  sendOtp(): void {
+    this.managerLogin.markAllAsTouched();
+
+    if (this.managerLogin.invalid) {
+      return;
+    }
+
+    this.loading.set(true);
+
+    setTimeout(() => {
+      this.loading.set(false);
+      this.showOtp.set(true);
+    }, 500);
+
+    //this.router.navigate(['/dashboard']);
+  }
+
+  login(): void {
+    if (this.otpControl.value.length !== 6) {
+      return;
+    }
+
+    this.loading.set(true);
+
+    setTimeout(() => {
+      this.loading.set(false);
+      this.router.navigate(['/dashboard']);
+    }, 500);
+  }
 }

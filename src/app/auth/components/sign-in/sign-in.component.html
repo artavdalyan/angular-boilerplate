@@ -1,1 +1,59 @@
-<p>sign-in works!</p>
+@if (!showOtp()) {
+  <form [formGroup]="managerLogin" class="login-form" nz-form>
+    <h1 class="login">
+      <span class="font-black inline-block mb-2">Welcome back!</span>
+      <br/>
+      <span class="text-base">Log in now to access your KAFD MaaS console management dashboard.</span>
+    </h1>
+    <div>
+      <nz-form-item  controlErrorContainer class="mb-0">
+        <input [placeholder]="'Email'" controlErrorsDirective formControlName="email" nz-input type="email"  nzSize="large"/>
+      </nz-form-item>
+    </div>
+    <div class="mt-6">
+      <nz-form-item class="mb-0" controlErrorContainer>
+        <input [placeholder]="'Password'" controlErrorsDirective formControlName="password" nz-input type="password" nzSize="large" />
+      </nz-form-item>
+    </div>
+
+    <button
+      (click)="sendOtp()"
+      [nzLoading]="loading()"
+      [nzType]="'primary'"
+      nzSize="large"
+      class="login-form-button login-form-margin mt-4"
+      nz-button
+    >
+      Send Code
+    </button>
+  </form>
+} @else {
+
+  <div  class="otp-form">
+    <h1>
+      <span class="font-black inline-block mb-2">Enter TFA code</span>
+      <br/>
+      <span class="text-base">An authentication code has been sent to your <span class="font-bold"> {{managerLogin.get('email').value}}.</span>
+       Please check your inbox and enter the code below to proceed.
+      </span>
+    </h1>
+    <div class="my-4">
+      <div class="flex w-full justify-center">
+        <ng-otp-input [formCtrl]="otpControl" (onInputChange)="login()"  [config]="{length:6}" />
+      </div>
+    </div>
+    <button
+      [nzLoading]="loading()"
+      (click)="login()"
+      [nzType]="'primary'"
+      nzSize="large"
+      class="login-form-button login-form-margin mt-4"
+      nz-button
+    >
+      Sign In
+    </button>
+
+  </div>
+}
+
+
