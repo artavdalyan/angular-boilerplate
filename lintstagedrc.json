@@ -1,0 +1,8 @@
+{
+    "*.ts": [
+      "eslint --fix --ext ts"
+    ],
+    "*.{ts,html,md,scss}": [
+      "prettier --write"
+    ]
+  }

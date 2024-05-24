@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "01:00"
+      timezone: "Asia/Yerevan"
+    open-pull-requests-limit: 10
+    target-branch: "develop"
+    labels:
+      - dependabot
+    ignore:
+      - dependency-name: "*"
+        update-types: [ "version-update:semver-patch" ]

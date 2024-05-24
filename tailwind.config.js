@@ -1,0 +1,325 @@
+const colors = require("tailwindcss/colors");
+
+const primaryPalettes = {
+  slate: {
+    900: "#132956",
+    800: "#19356E",
+    700: "#2959B8",
+    600: "#3776F5",
+    500: "#5F91F7",
+    400: "#AFC8FB",
+    300: "#D7E4FD",
+    200: "#EBF1FE",
+    100: "#F5F8FF",
+  },
+};
+
+const themes = {
+  // Default theme is required for theming system to work correctly
+  default: {
+    primary: {
+      ...primaryPalettes.slate,
+      DEFAULT: primaryPalettes.slate[600],
+    },
+    accent: {
+      ...colors.slate,
+      DEFAULT: colors.slate[800],
+    },
+    warn: {
+      ...colors.red,
+      DEFAULT: colors.red[600],
+    },
+    "on-warn": {
+      500: colors.red["50"],
+    },
+  },
+};
+
+/**
+ * Tailwind configuration
+ */
+const config = {
+  darkMode: "class",
+  content: [
+    "./projects/**/*.{html,scss,ts}",
+    "./src/**/*.{html,scss,ts}",
+    "./projects/**/assets/i18n/*.json",
+  ],
+  important: true,
+  theme: {
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+    },
+    fontSize: {
+      xxs: ["0.625rem", { lineHeight: "1rem" }],
+      xs: ["0.75rem", { lineHeight: "1rem" }],
+      sm: ["0.875rem", { lineHeight: "1.25rem" }],
+      base: ["1rem", { lineHeight: "1.5rem" }],
+      lg: ["1.125rem", { lineHeight: "1.5rem" }],
+      xl: ["1.25rem", { lineHeight: "1.75rem" }],
+      "2xl": ["1.5rem", { lineHeight: "1.75rem" }],
+      "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
+      "4xl": ["2rem", { lineHeight: "2.25rem" }],
+      "5xl": ["2.5rem", { lineHeight: "2.75rem" }],
+      "6xl": ["3rem", { lineHeight: "3rem" }],
+      "7xl": ["3.5rem", { lineHeight: "3.5rem" }],
+      "8xl": ["4.5rem", { lineHeight: "4.5rem" }],
+      "9xl": ["6rem", { lineHeight: "6rem" }],
+    },
+    fontWeight: {
+      thin: 100,
+      extralight: 200,
+      light: 300,
+      normal: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+      extrabold: 800,
+      black: 900,
+    },
+    screens: {
+      sm: "650px",
+      md: "960px",
+      lg: "1280px",
+      xl: "1440px",
+    },
+    colors: ({ colors }) => ({
+      current: "current",
+      transparent: "transparent",
+      black: "#262931",
+      white: "#fff",
+      gray: {
+        900: "#BDBDBD",
+        800: "#CACACA",
+        700: "#E3E3E3",
+        600: "#FCFCFC",
+        500: "#FDFDFD",
+        400: "#FEFEFE",
+        300: "#FEFEFE",
+        200: "#FFFFFF",
+        100: "#FFFFFF",
+      },
+      midnight: {
+        900: "#0D0E11",
+        800: "#111216",
+        700: "#1D1F25",
+        600: "#262931",
+        500: "#51545A",
+        400: "#A8AAAD",
+        300: "#D4D4D6",
+        200: "#E9EAEA",
+        100: "#F4F4F5",
+      },
+      green: {
+        900: "#003F2C",
+        800: "#005139",
+        700: "#00865F",
+        600: "#00B37E",
+        500: "#33C298",
+        400: "#99E1CB",
+        300: "#CCF0E5",
+        200: "#E5F7F2",
+        100: "#F2FBF9",
+      },
+      violet: {
+        900: "#23284E",
+        800: "#2D3364",
+        700: "#4A55A7",
+        600: "#6371DE",
+        500: "#828DE5",
+        400: "#C1C6F2",
+        300: "#E0E3F8",
+        200: "#EFF1FC",
+        100: "#F7F8FD",
+      },
+      red: {
+        900: "#551C1C",
+        800: "#923030",
+        700: "#C34040",
+        600: "#f45050",
+        500: "#F67373",
+        400: "#FCC9C9",
+        300: "#FDE5E5",
+        200: "#FCEAE7",
+        100: "#FEF1F1",
+      },
+      orange: {
+        900: "#592C22",
+        800: "#73392C",
+        700: "#BF5F49",
+        600: "#FF7E61",
+        500: "#FF9881",
+        400: "#FFCBC0",
+        300: "#FFE5DF",
+        200: "#FFF2EF",
+        100: "#FFF9F7",
+      },
+      yellow: {
+        900: "#594601",
+        800: "#BF9602",
+        700: "#E6B402",
+        600: "#FFC802",
+        500: "#FFD335",
+        400: "#FFE99A",
+        300: "#FFF4CC",
+        200: "#FFFAE6",
+        100: "#FFFCF2",
+      },
+      amber: {},
+    }),
+    extend: {
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
+      strokeWidth: {
+        1.5: "1.5px",
+      },
+      boxShadow: {
+        blue: "0px 30px 80px -40px rgba(55, 118, 245, 0.15)",
+      },
+      spacing: {
+        px: "1px",
+        0: "0px",
+        0.5: "0.125rem",
+        1: "0.25rem",
+        1.5: "0.375rem",
+        2: "0.5rem",
+        2.5: "0.625rem",
+        3: "0.75rem",
+        3.5: "0.875rem",
+        4: "1rem",
+        4.5: "1.125rem",
+        5: "1.25rem",
+        6: "1.5rem",
+        7: "1.75rem",
+        8: "2rem",
+        9: "2.25rem",
+        10: "2.5rem",
+        11: "2.75rem",
+        12: "3rem",
+        13: "3.25rem",
+        14: "3.5rem",
+        14.5: "3.625rem",
+        15: "3.75rem",
+        16: "4rem",
+        18: "4.5rem",
+        20: "5rem",
+        22: "5.5rem",
+        26: "6.5rem",
+        30: "7.5rem",
+        50: "12.5rem",
+        54: "13.5rem",
+        90: "22.5rem",
+        // Bigger values
+        100: "25rem",
+        120: "30rem",
+        128: "32rem",
+        140: "35rem",
+        160: "40rem",
+        180: "45rem",
+        192: "48rem",
+        200: "50rem",
+        240: "60rem",
+        256: "64rem",
+        280: "70rem",
+        320: "80rem",
+        360: "90rem",
+        400: "100rem",
+        480: "120rem",
+
+        // Fractional values
+        "1/3": "33.333333%",
+        "2/3": "66.666667%",
+        "1/4": "25%",
+        "2/4": "50%",
+        "3/4": "75%",
+        "1/2": "50%",
+      },
+      flex: {
+        0: "0 0 auto",
+      },
+      opacity: {
+        12: "0.12",
+        38: "0.38",
+        87: "0.87",
+      },
+      rotate: {
+        "-270": "270deg",
+        15: "15deg",
+        30: "30deg",
+        60: "60deg",
+        270: "270deg",
+      },
+      scale: {
+        "-1": "-1",
+      },
+      zIndex: {
+        "-1": -1,
+        49: 49,
+        60: 60,
+        70: 70,
+        80: 80,
+        90: 90,
+        99: 99,
+        999: 999,
+        9999: 9999,
+        99999: 99999,
+      },
+      transitionDuration: {
+        400: "400ms",
+      },
+      transitionTimingFunction: {
+        drawer: "cubic-bezier(0.25, 0.8, 0.25, 1)",
+      },
+
+      // @tailwindcss/typography
+      typography: () => ({
+        sm: {
+          css: {
+            code: {
+              fontSize: "1em",
+            },
+            pre: {
+              fontSize: "1em",
+            },
+            table: {
+              fontSize: "1em",
+            },
+          },
+        },
+      }),
+      minHeight: ({ spacing }) => ({
+        ...spacing,
+        none: "none",
+        0: "0px",
+      }),
+      maxHeight: {
+        none: "none",
+        0: "0px",
+      },
+      minWidth: ({ theme }) => ({
+        ...theme("spacing"),
+        none: "none",
+        0: "0px",
+        screen: "100vw",
+      }),
+      maxWidth: ({ theme }) => ({
+        ...theme("spacing"),
+        none: "none",
+        screen: "100vw",
+      }),
+    },
+  },
+  corePlugins: {
+    appearance: false,
+    container: false,
+    float: false,
+    clear: false,
+    placeholderColor: false,
+    placeholderOpacity: false,
+    verticalAlign: false,
+  },
+  plugins: [require("./src/tailwind/plugins/icon-size")],
+};
+
+module.exports = config;
