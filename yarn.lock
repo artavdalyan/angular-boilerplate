@@ -5903,7 +5903,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-lint-staged@^15.2.4:
+lint-staged@^15.2.2:
   version "15.2.4"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-15.2.4.tgz#b8376b459a308d40e5dfdae302f333fa4c4bf126"
   integrity sha512-3F9KRQIS2fVDGtCkBp4Bx0jswjX7zUcKx6OF0ZeY1prksUyKPRIIUqZhIUYAstJfvj6i48VFs4dwVIbCYwvTYQ==
@@ -8859,6 +8859,7 @@ word-wrap@^1.2.5:
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
