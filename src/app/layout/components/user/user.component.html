@@ -1,0 +1,25 @@
+<div class="flex cursor-pointer">
+  <button [nzDropdownMenu]="menu" nz-dropdown nzOverlayClassName="w-54"
+          nzPlacement="bottomRight"
+  >
+    <div class="flex gap-3 items-center">
+      <span class="text-base">Faisal Alsaheal</span>
+      <div class="flex h-10 w-10 items-center">
+        <img class="rounded-[50px]" src="assets/images/user.jpeg" width="48px" height="48px">
+      </div>
+    </div>
+  </button>
+</div>
+
+
+
+
+<nz-dropdown-menu #menu="nzDropdownMenu" >
+  <div class="p-2" nz-menu>
+    <button class="group w-full hover:bg-red-100" nz-menu-item (click)="logOut()">
+      <span class="stroke-red group-hover:stroke-red mr-3 icon-size-4.5" nz-icon nzType="svg:logout"></span>
+      <span class="text-left text-red-600">{{ 'keywords.signOut' | transloco }}</span>
+    </button>
+  </div>
+</nz-dropdown-menu>
+

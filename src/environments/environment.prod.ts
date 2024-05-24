@@ -5,5 +5,5 @@ export const environment: AppConfig = {
   production: true,
   baseURI: document.baseURI,
   apiUrl: '',
-  availableLanguages: [LanguageCodeEnum.EN],
+  availableLanguages: [LanguageCodeEnum.EN, LanguageCodeEnum.AR],
 };

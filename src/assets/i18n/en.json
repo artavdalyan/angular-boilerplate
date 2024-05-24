@@ -1,6 +1,7 @@
 {
   "keywords": {
-    "frontendService": "Frontend Service"
+    "frontendService": "Frontend Service",
+    "signOut": "Sign Out"
   },
   "error": {
     "required": "This field is required",

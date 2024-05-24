@@ -1,0 +1,23 @@
+<button
+  [nzDropdownMenu]="menu"
+  class="flex items-center justify-center hover:bg-midnight-100 focus:bg-midnight-100"
+  nz-button
+  nz-dropdown
+  nzOverlayClassName="w-30"
+  [nzShape]="'circle'"
+  nzType="text"
+>
+  <img alt="flag" class="h-6 w-6 rounded-full object-cover" height="20" src="assets/flags/{{ selectedLanguage() }}.png" width="20" />
+</button>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu class="w-12">
+    @for (language of languages(); track language) {
+      <li (click.debounce)="changeLanguage(language)" nz-menu-item>
+        <div class="flex items-center">
+          <img alt="icon" class="h-5 w-5 rounded-full object-cover" height="20" src="assets/flags/{{ language }}.png" width="20" />
+        </div>
+      </li>
+    }
+  </ul>
+</nz-dropdown-menu>
+

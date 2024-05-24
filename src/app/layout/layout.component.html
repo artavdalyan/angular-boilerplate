@@ -41,13 +41,13 @@
     <nz-header class="bg-white">
       <div class="flex">
         <i (click)="isCollapsed = !isCollapsed" [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" class="trigger" nz-icon></i>
-        <ul class="ml-auto mr-10 flex">
-          <li class="mr-4">
-            jjjjj
-          </li>
-          <li>
-            hhhh
-          </li>
+        <ul class="ms-auto flex items-center gap-8 ">
+            <div routerLink="/notifications" class="py-1.5 px-5 text-sm bg-white rounded-[30px] border border-solid border-midnight-200 flex items-center gap-3">
+              <span>You have <span class="text-green-600">21</span> new trips</span>
+              <span class="icon-size-5 bell-icon animate__swing" nz-icon nzType="icons:bell"></span>
+            </div>
+            <app-language-switcher />
+            <app-user />
         </ul>
       </div>
     </nz-header>

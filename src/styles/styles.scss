@@ -3,6 +3,18 @@
 
 
 
+.ng-otp-input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
 .otp-input {
+  margin-right: 0 !important;
   @apply outline-primary-600
+}
+
+
+.bell-icon svg path {
+  stroke: #ffae1f;
+  fill: #ffae1f;
 }

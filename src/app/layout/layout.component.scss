@@ -10,4 +10,34 @@ nz-sider {
 nz-header {
   background: #fff;
   border-bottom: 1px solid #e8e8e8;
+  padding: 10px 12px;
+  line-height: 1;
+}
+
+
+.animate__swing{
+  animation: swing 1s infinite;
+}
+
+
+@-webkit-keyframes swing {
+  20% {
+    transform: rotate(15deg)
+  }
+
+  40% {
+    transform: rotate(-10deg)
+  }
+
+  60% {
+    transform: rotate(5deg)
+  }
+
+  80% {
+    transform: rotate(-5deg)
+  }
+
+  to {
+    transform: rotate(0deg)
+  }
 }
