@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<div class="flex flex-wrap gap-8">
+  <div class="card flex justify-between rounded-lg bg-white">
+    <div class="flex flex-col">
+      <div class="text-nowrap text-sm text-midnight-500">Active users</div>
+      <div class="mt-auto text-2xl font-black" [countUp]="1200"></div>
+    </div>
+    <div>
+      <span class="icon-size-7" nz-icon [nzType]="'icons:user'"></span>
+    </div>
+  </div>
+
+  <div class="card flex justify-between rounded-lg bg-white">
+    <div class="flex flex-col">
+      <div class="text-nowrap text-sm text-midnight-500">Average session time</div>
+      <div class="mt-auto text-2xl font-black" [countUp]="15"></div>
+    </div>
+    <div>
+      <span class="text-yellow-600 icon-size-8" nz-icon [nzType]="'icons:session'"></span>
+    </div>
+  </div>
+
+  <div class="card flex justify-between rounded-lg bg-white">
+    <div class="flex flex-col">
+      <div class="mr-2 text-sm text-midnight-500">Active transportation modes</div>
+      <div class="mt-auto text-2xl font-black" [countUp]="4"></div>
+    </div>
+    <div>
+      <span class="text-green-600 icon-size-8" nz-icon [nzType]="'icons:mode'"></span>
+    </div>
+  </div>
+
+  <div class="card flex justify-between rounded-lg bg-white">
+    <div class="flex flex-col">
+      <div class="text-nowrap text-sm text-midnight-500">KAFD offered services</div>
+      <div class="mt-auto text-2xl font-black" [countUp]="120"></div>
+    </div>
+    <div>
+      <span class="text-violet-600 icon-size-8" nz-icon [nzType]="'icons:services'"></span>
+    </div>
+  </div>
+</div>

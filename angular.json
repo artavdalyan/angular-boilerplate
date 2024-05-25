@@ -50,7 +50,9 @@
               "src/styles/styles.scss",
               "src/theme.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -105,7 +107,9 @@
               "src/styles/styles.scss",
               "src/theme.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           }
         }
       }
