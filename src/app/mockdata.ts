@@ -119,7 +119,7 @@ export const notificationsData: NotificationMockData[] = [
   },
 ];
 
-interface OfferMockData {
+export interface OfferMockData {
   transportMode: string[];
   location: string;
   radius: string;
@@ -200,14 +200,14 @@ export const offersData: OfferMockData[] = [
   },
 ];
 
-interface EventsMockData {
+export interface EventsMockData {
   title: string;
   date_range: string;
   description: string;
   image_url: string;
 }
 
-export const EventsData: EventsMockData[] = [
+export const eventsData: EventsMockData[] = [
   {
     title: 'KAFD’s Ramadan Nights Event',
     date_range: 'MAR 14/03/2024 - APR 11/04/2024',

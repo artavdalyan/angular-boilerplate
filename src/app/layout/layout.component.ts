@@ -45,9 +45,14 @@ export class LayoutComponent {
       icon: 'tag',
       submenu: [
         {
-          path: 'order-history',
-          title: 'order-history',
-          icon: 'history',
+          path: 'offers',
+          title: 'Offers',
+          icon: 'tag',
+        },
+        {
+          path: 'events',
+          title: 'Events',
+          icon: 'calendar',
         },
       ],
     },

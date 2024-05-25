@@ -1,1 +1,20 @@
-<p>offers works!</p>
+<nz-table #editRowTable nzBordered [nzData]="offersData" [nzLoading]="loading()">
+  <thead>
+    <tr>
+      <th>Transport Mode</th>
+      <th>Location</th>
+      <th>Radius</th>
+      <th>Offer Active</th>
+      <th>Offer Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of editRowTable.data">
+      <td>{{ data.transportMode.join(', ') }}</td>
+      <td>{{ data.location }}</td>
+      <td>{{ data.radius }}</td>
+      <td>{{ data.offerActive }}</td>
+      <td>{{ data.offerDetails }}</td>
+    </tr>
+  </tbody>
+</nz-table>

@@ -1,7 +1,5 @@
-@import "tailwind";
-@import "nz-input";
-
-
+@import 'tailwind';
+@import 'nz-input';
 
 .ng-otp-input-wrapper {
   display: flex;
@@ -10,11 +8,21 @@
 
 .otp-input {
   margin-right: 0 !important;
-  @apply outline-primary-600
+  @apply outline-primary-600;
 }
-
 
 .bell-icon svg path {
   stroke: #ffae1f;
   fill: #ffae1f;
+}
+
+nz-table {
+  .ant-table {
+    .ant-table-thead {
+      .ant-table-cell {
+        color: #6b7280;
+        font-weight: 600;
+      }
+    }
+  }
 }
