@@ -4,5 +4,7 @@ export enum RouteEnum {
   SIGN_UP = 'sign-up',
   DASHBOARD = 'dashboard',
   NOTIFICATIONS = 'notifications',
+  OFFERS = 'offers',
+  EVENTS = 'events',
   USERS = 'users',
 }

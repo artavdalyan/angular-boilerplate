@@ -23,4 +23,14 @@ export const LAYOUT_ROUTES: Routes = [
     title: 'Users',
     loadComponent: () => import('../pages/notifications/notifications.component').then(c => c.NotificationsComponent),
   },
+  {
+    path: RouteEnum.OFFERS,
+    title: 'Offers',
+    loadComponent: () => import('../pages/offers/offers.component').then(c => c.OffersComponent),
+  },
+  {
+    path: RouteEnum.EVENTS,
+    title: 'Events',
+    loadComponent: () => import('../pages/events/events.component').then(c => c.EventsComponent),
+  },
 ];

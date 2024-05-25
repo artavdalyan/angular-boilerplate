@@ -1,10 +1,9 @@
 import { inject, Injectable } from '@angular/core';
-import { Action, State, StateContext } from '@ngxs/store';
-import { produce } from 'immer';
-import { Observable, tap } from 'rxjs';
+import { Nullable } from '@core/interfaces';
 import { AuthService } from '@core/services/auth.service';
 import { FullReset, SignIn, SignOut } from '@core/store/actions';
-import { LoginPayloadDto, Nullable } from '@core/interfaces';
+import { Action, State, StateContext } from '@ngxs/store';
+import { produce } from 'immer';
 
 export interface AuthStateModel {
   accessToken: Nullable<string>;
@@ -23,16 +22,10 @@ export class AuthState {
   private authService = inject(AuthService);
 
   @Action(SignIn)
-  signIn(ctx: StateContext<AuthStateModel>, { payload }: SignIn): Observable<LoginPayloadDto> {
-    return this.authService.signIn(payload.user).pipe(
-      tap(res => {
-        ctx.setState(
-          produce(ctx.getState(), draft => {
-            draft.accessToken = res.accessToken.token;
-          }),
-        );
-      }),
-    );
+  signIn(ctx: StateContext<AuthStateModel>): void {
+    ctx.setState({
+      accessToken: 'bearer token',
+    });
   }
 
   @Action(SignOut)

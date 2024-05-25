@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { SharedModule } from "@shared/shared.module";
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
+import { SignOut } from '@core/store/actions';
+import { Store } from '@ngxs/store';
+import { SharedModule } from '@shared/shared.module';
 
 @Component({
   selector: 'app-user',
@@ -8,13 +10,16 @@ import { Router } from "@angular/router";
   imports: [SharedModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserComponent {
-   router = inject(Router);
+  router = inject(Router);
 
+  store = inject(Store);
 
-    logOut() {
-        this.router.navigate(['/auth/sign-in']);
-    }
+  logOut(): void {
+    this.store.dispatch(new SignOut()).subscribe(() => {
+      void this.router.navigate(['/auth/sign-in']);
+    });
+  }
 }
