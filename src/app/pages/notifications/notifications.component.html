@@ -1,0 +1,16 @@
+<nz-table #editRowTable nzBordered [nzData]="notificationOfData" [nzLoading]="loading()">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Conditions</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of editRowTable.data">
+      <td>{{ data.title }}</td>
+      <td>{{ data.conditions }}</td>
+      <td>{{ data.message }}</td>
+    </tr>
+  </tbody>
+</nz-table>

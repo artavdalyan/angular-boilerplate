@@ -1,29 +1,35 @@
+import { registerLocaleData } from '@angular/common';
+import { provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
+import en from '@angular/common/locales/en';
 import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
-import { provideTransloco, Translation, TranslocoService } from '@ngneat/transloco';
-import { environment } from '@environments/environment';
-import { TranslocoHttpLoader } from '@core/transloco-http-loader';
-import { provideHttpClient, withInterceptors, withInterceptorsFromDi, withJsonpSupport } from '@angular/common/http';
-import { NgxsModule } from '@ngxs/store';
-import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { NgxsResetPluginModule } from 'ngxs-reset-plugin';
-import { NgxsActionsExecutingModule } from '@ngxs-labs/actions-executing';
-import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
-import { AuthState, LanguageState } from '@core/store/state';
 import { interceptors } from '@core/interceptors';
-import { provideAnimations } from "@angular/platform-browser/animations";
-import { firstValueFrom } from "rxjs";
+import { AuthState, LanguageState } from '@core/store/state';
+import { TranslocoHttpLoader } from '@core/transloco-http-loader';
+import { environment } from '@environments/environment';
+import { provideTransloco, Translation, TranslocoService } from '@ngneat/transloco';
+import { NgxsActionsExecutingModule } from '@ngxs-labs/actions-executing';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsModule } from '@ngxs/store';
+/** config ng-zorro-antd i18n **/
+import { provideNzI18n, en_US } from 'ng-zorro-antd/i18n';
+import { NgxsResetPluginModule } from 'ngxs-reset-plugin';
+import { firstValueFrom } from 'rxjs';
+
+/** config angular i18n **/
+registerLocaleData(en);
+import { routes } from './app.routes';
 
 export function tokenGetter() {
   return localStorage.getItem('authState.accessToken');
 }
 
 const preloadLang = (transloco: TranslocoService) => async (): Promise<Translation> => {
-  let local = 'en';
+  const local = 'en';
   transloco.setActiveLang(local);
 
   return firstValueFrom(transloco.load(local));
@@ -54,10 +60,8 @@ export const appConfig: ApplicationConfig = {
       NgxsActionsExecutingModule.forRoot(),
       NgxsRouterPluginModule.forRoot(),
     ),
-    provideHttpClient(
-      withInterceptorsFromDi(),
-      withInterceptors(interceptors),
-    ),
+    provideHttpClient(withInterceptorsFromDi(), withInterceptors(interceptors)),
+    provideNzI18n(en_US),
     {
       provide: APP_INITIALIZER,
       multi: true,

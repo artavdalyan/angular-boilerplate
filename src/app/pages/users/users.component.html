@@ -1,0 +1,40 @@
+<nz-table #editRowTable nzBordered [nzData]="listOfData" [nzLoading]="loading()">
+  <thead>
+    <tr>
+      <th>
+        <span class="font-medium">First Name</span>
+      </th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of editRowTable.data">
+      <ng-container *ngIf="!editCache[data.id].edit; else editTemplate">
+        <td>{{ data.firstName }}</td>
+        <td>{{ data.lastName }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.phone }}</td>
+        <td>{{ data.role }}</td>
+        <td>
+          <a (click)="startEdit(data.id)" class="me-4 text-violet-600">Edit</a>
+          <a class="text-red-600" nz-popconfirm nzPopconfirmTitle="Are you sure?" nzOkText="Delete" (nzOnConfirm)="delete(data.id)">Delete</a>
+        </td>
+      </ng-container>
+      <ng-template #editTemplate>
+        <td><input type="text" nz-input [(ngModel)]="editCache[data.id].data.firstName" /></td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[data.id].data.lastName" /></td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[data.id].data.email" /></td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[data.id].data.phone" /></td>
+        <td><input type="text" nz-input [(ngModel)]="editCache[data.id].data.role" /></td>
+        <td>
+          <a (click)="saveEdit(data.id)" class="me-4 text-violet-600">Save</a>
+          <a class="text-red-600" nz-popconfirm nzPopconfirmTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit(data.id)">Cancel</a>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</nz-table>

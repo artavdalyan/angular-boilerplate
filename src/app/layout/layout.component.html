@@ -6,7 +6,7 @@
     <ul class="sidebar-nav general" nz-menu nzMode="inline" nzNoAnimation nzTheme="light">
       <ng-container *ngFor="let menu of menuItems">
         <ng-container *ngIf="menu.submenu?.length">
-          <li [nzIcon]="null"  [nzTitle]="menu.title" [routerLinkActive]="''" class="sidebar-nav__item" nz-submenu>
+          <li [nzIcon]="null" [nzTitle]="menu.title" [routerLinkActive]="''" class="sidebar-nav__item" nz-submenu>
             <ul class="sidebar-nav">
               <li
                 [queryParams]="submenu.queryParam"
@@ -41,13 +41,16 @@
     <nz-header class="bg-white">
       <div class="flex">
         <i (click)="isCollapsed = !isCollapsed" [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" class="trigger" nz-icon></i>
-        <ul class="ms-auto flex items-center gap-8 ">
-            <div routerLink="/notifications" class="py-1.5 px-5 text-sm bg-white rounded-[30px] border border-solid border-midnight-200 flex items-center gap-3">
-              <span>You have <span class="text-green-600">21</span> new trips</span>
-              <span class="icon-size-5 bell-icon animate__swing" nz-icon nzType="icons:bell"></span>
-            </div>
-            <app-language-switcher />
-            <app-user />
+        <ul class="ms-auto flex items-center gap-8">
+          <div
+            routerLink="/notifications"
+            class="flex cursor-pointer items-center gap-3 rounded-[30px] border border-solid border-midnight-200 bg-white px-5 py-1.5 text-sm"
+          >
+            <span>You have <span class="text-green-600">21</span> new trips</span>
+            <span class="bell-icon animate__swing icon-size-5" nz-icon nzType="icons:bell"></span>
+          </div>
+          <app-language-switcher />
+          <app-user />
         </ul>
       </div>
     </nz-header>
@@ -56,4 +59,3 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
-

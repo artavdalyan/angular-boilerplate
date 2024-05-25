@@ -1,43 +1,52 @@
 .logo {
-  padding: 2rem 1.5rem 2rem 1.5rem
+  padding: 2rem 1.5rem 2rem 1.5rem;
 }
-
 
 nz-sider {
   background: #fff;
   border-right: 1px solid #e8e8e8;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  z-index: 11;
+  height: 100vh;
 }
 nz-header {
   background: #fff;
   border-bottom: 1px solid #e8e8e8;
   padding: 10px 12px;
   line-height: 1;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
+nz-content {
+  margin-inline-start: 220px;
+}
 
-.animate__swing{
+.animate__swing {
   animation: swing 1s infinite;
 }
 
-
 @-webkit-keyframes swing {
   20% {
-    transform: rotate(15deg)
+    transform: rotate(15deg);
   }
 
   40% {
-    transform: rotate(-10deg)
+    transform: rotate(-10deg);
   }
 
   60% {
-    transform: rotate(5deg)
+    transform: rotate(5deg);
   }
 
   80% {
-    transform: rotate(-5deg)
+    transform: rotate(-5deg);
   }
 
   to {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 }
