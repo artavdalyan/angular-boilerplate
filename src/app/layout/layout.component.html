@@ -6,7 +6,7 @@
     <ul class="sidebar-nav general" nz-menu nzMode="inline" nzNoAnimation nzTheme="light">
       <ng-container *ngFor="let menu of menuItems">
         <ng-container *ngIf="menu.submenu?.length">
-          <li [nzIcon]="null" [nzTitle]="menu.title" [routerLinkActive]="''" class="sidebar-nav__item" nz-submenu>
+          <li [nzIcon]="menu.icon" [nzTitle]="menu.title" [routerLinkActive]="''" class="sidebar-nav__item" nz-submenu>
             <ul class="sidebar-nav">
               <li
                 [queryParams]="submenu.queryParam"
@@ -16,7 +16,8 @@
                 class="sidebar-nav__item"
                 nz-menu-item
               >
-                {{ submenu.title }}
+                <i [nzType]="submenu.icon" *ngIf="submenu.icon" nz-icon></i>
+                <span>{{ submenu.title }}</span>
               </li>
             </ul>
           </li>
@@ -29,9 +30,8 @@
             class="sidebar-nav__item"
             nz-menu-item
           >
-            <div class="flex items-center">
-              <span>{{ menu.title }}</span>
-            </div>
+            <i [nzType]="menu.icon" *ngIf="menu.icon" nz-icon></i>
+            <span>{{ menu.title }}</span>
           </li>
         </ng-container>
       </ng-container>
@@ -55,7 +55,7 @@
       </div>
     </nz-header>
     <nz-content>
-      <div class="ms-12 mt-8">
+      <div class="ms-12 mt-8 max-w-[1128px]">
         <router-outlet></router-outlet>
       </div>
     </nz-content>

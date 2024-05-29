@@ -18,7 +18,7 @@
         <td>{{ data.phone }}</td>
         <td>{{ data.role }}</td>
         <td>
-          <a (click)="startEdit(data.id)" class="me-4 text-violet-600">Edit</a>
+          <a (click)="startEdit(data.id)" class="me-4 text-violet-600 rtl:ms-4">Edit</a>
           <a class="text-red-600" nz-popconfirm nzPopconfirmTitle="Are you sure?" nzOkText="Delete" (nzOnConfirm)="delete(data.id)">Delete</a>
         </td>
       </ng-container>
@@ -29,7 +29,7 @@
         <td><input type="text" nz-input [(ngModel)]="editCache[data.id].data.phone" /></td>
         <td><input type="text" nz-input [(ngModel)]="editCache[data.id].data.role" /></td>
         <td>
-          <a (click)="saveEdit(data.id)" class="me-4 text-violet-600">Save</a>
+          <a (click)="saveEdit(data.id)" class="me-4 text-violet-600 rtl:ms-4">Save</a>
           <a class="text-red-600" nz-popconfirm nzPopconfirmTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit(data.id)">Cancel</a>
         </td>
       </ng-template>

@@ -26,3 +26,12 @@ nz-table {
     }
   }
 }
+
+nz-sider [nz-icon] {
+  @apply inline-flex items-center justify-center #{!important};
+  vertical-align: middle !important;
+
+  svg[data-icon^='icons'] {
+    fill: none;
+  }
+}

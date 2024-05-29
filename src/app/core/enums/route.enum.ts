@@ -7,4 +7,5 @@ export enum RouteEnum {
   OFFERS = 'offers',
   EVENTS = 'events',
   USERS = 'users',
+  TRANSPORTS = 'transports',
 }

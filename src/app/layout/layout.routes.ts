@@ -29,6 +29,11 @@ export const LAYOUT_ROUTES: Routes = [
     loadComponent: () => import('../pages/offers/offers.component').then(c => c.OffersComponent),
   },
   {
+    path: RouteEnum.TRANSPORTS,
+    title: 'Transports',
+    loadComponent: () => import('../pages/transports/transports.component').then(c => c.TransportsComponent),
+  },
+  {
     path: RouteEnum.EVENTS,
     title: 'Events',
     loadComponent: () => import('../pages/events/events.component').then(c => c.EventsComponent),

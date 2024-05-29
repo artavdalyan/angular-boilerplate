@@ -1,44 +1,22 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CountUpDirective } from '@core/directives/animated-counter';
 import { SharedModule } from '@shared/shared.module';
-import { NgApexchartsModule, ApexAxisChartSeries, ApexChart, ApexGrid, ApexLegend, ApexDataLabels, ApexYAxis, ApexPlotOptions } from 'ng-apexcharts';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
-import { GaugeChartComponent } from './gauge-chart/gauge-chart.component';
-
-// eslint-disable-next-line no-redeclare
-interface ApexXAxis {
-  type?: 'category' | 'datetime' | 'numeric';
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  categories?: any;
-  labels?: {
-    style?: {
-      colors?: string | string[];
-      fontSize?: string;
-    };
-  };
-}
-
-export interface ChartOptions {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  yaxis: ApexYAxis;
-  xaxis: ApexXAxis;
-  grid: ApexGrid;
-  colors: string[];
-  legend: ApexLegend;
-}
+import { transportsData } from '../../mockdata';
+import { ChartOptions } from '../dashboard/dashboard.component';
+import { GaugeChartComponent } from '../dashboard/gauge-chart/gauge-chart.component';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-transports',
   standalone: true,
-  imports: [NgApexchartsModule, SharedModule, CountUpDirective, GaugeChartComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
+  imports: [SharedModule, GaugeChartComponent, NgApexchartsModule],
+  templateUrl: './transports.component.html',
+  styleUrl: './transports.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardComponent {
+export class TransportsComponent {
+  protected readonly transportsData = transportsData;
+
   public chartOptions: Partial<ChartOptions> = {
     series: [
       {

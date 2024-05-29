@@ -20,56 +20,56 @@ export class LayoutComponent {
   menuItems: SidebarMenuItem[] = [
     {
       title: 'Dashboard',
-      icon: 'dashboard',
+      icon: 'icons:home',
       path: '/dashboard',
     },
     {
       title: 'Users',
-      icon: 'user',
+      icon: 'icons:users',
       path: '/users',
     },
-    {
-      title: 'Complaints',
-      icon: 'alert',
-      path: '/complaints',
-    },
+    // {
+    //   title: 'Complaints',
+    //   icon: 'alert',
+    //   path: '/complaints',
+    // },
     {
       title: 'Transport modes',
-      icon: 'car',
-      path: '/transport-modes',
+      icon: 'icons:transport',
+      path: '/transports',
     },
 
     {
       path: '',
       title: 'Offers',
-      icon: 'tag',
+      icon: 'icons:offer',
       submenu: [
         {
           path: 'offers',
           title: 'Offers',
-          icon: 'tag',
+          icon: 'icons:offer',
         },
         {
           path: 'events',
           title: 'Events',
-          icon: 'calendar',
+          icon: 'icons:calendar',
         },
       ],
     },
-    {
-      title: 'VIP bookings',
-      icon: 'star',
-      path: '/bookings',
-    },
+    // {
+    //   title: 'VIP bookings',
+    //   icon: 'star',
+    //   path: '/bookings',
+    // },
     {
       title: 'Notifications',
-      icon: 'notification',
+      icon: 'icons:bell',
       path: '/notifications',
     },
-    {
-      title: 'Custom pages',
-      icon: 'setting',
-      path: '/pages',
-    },
+    // {
+    //   title: 'Custom pages',
+    //   icon: 'setting',
+    //   path: '/pages',
+    // },
   ];
 }

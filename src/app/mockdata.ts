@@ -303,3 +303,27 @@ export const eventsData: EventsMockData[] = [
       'https://www.kafd.sa/-/media/project/kafd/events/events-list/atrium-art-web-copy.jpg?cx=0&cy=0&cw=920&ch=680&hash=6035B252C68CEB3B07FA5DE6A6A4FCF2',
   },
 ];
+
+export interface TransportMockData {
+  mode: string;
+  checked: boolean;
+}
+
+export const transportsData: TransportMockData[] = [
+  {
+    mode: 'Car (2000)',
+    checked: true,
+  },
+  {
+    mode: 'Uber (1250)',
+    checked: true,
+  },
+  {
+    mode: 'Shuttle bus (1000)',
+    checked: true,
+  },
+  {
+    mode: 'Walk (500)',
+    checked: true,
+  },
+];

@@ -39,3 +39,30 @@
     </div>
   </div>
 </div>
+
+<div id="chart" class="mt-10 flex flex-wrap gap-10">
+  <div class="w-[500px] rounded-lg bg-white">
+    <div class="mx-4 pt-4 text-2xl font-black">Trips</div>
+    <apx-chart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [dataLabels]="chartOptions.dataLabels!"
+      [plotOptions]="chartOptions.plotOptions!"
+      [xaxis]="chartOptions.xaxis!"
+      [yaxis]="chartOptions.yaxis!"
+      [legend]="chartOptions.legend!"
+      [colors]="chartOptions.colors!"
+    ></apx-chart>
+    <div class="mb-4 flex flex-col items-center">
+      <h2 class="text-2xl font-black">5000</h2>
+      <h6 class="text-truncate text-midnight-400">5 % higher than last month</h6>
+    </div>
+  </div>
+
+  <div class="flex flex-1 flex-col rounded-lg bg-white">
+    <div class="mx-4 pt-4 text-2xl font-black">CO₂ emissions</div>
+    <div class="flex flex-1 items-center justify-center">
+      <app-gauge-chart />
+    </div>
+  </div>
+</div>
